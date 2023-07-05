@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: antiquewhite;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      /* background-color: rgba(0, 0, 0, 0.5); */
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: antiquewhite;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 1.5rem;
+      padding: 10px;
+      margin: 0 10px;
+      transition: background-color 0.3s, text-decoration 0.3s;
+    }
+
+    a:hover {
+      background-color: transparent;
+      color:crimson;
+      text-decoration: underline;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    .admin a {
+     
+      margin-left: 20px;
+    }
+
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+      border-radius: 50%;
+      
+      color: #000;
+      font-size: 1.2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .icon:hover {
+      background-color: transparent;
+      /* color: #fff; */
+    }
+
+    #slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #slideshow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #slideshow img.active {
+      opacity: 1;
+    }
+
+    .banner {
+      position: absolute;
+      top: -85%;
+      left: 30%;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 3.5rem;
+      color: antiquewhite;
+      z-index: 1;
+    }
+
+    /* #slideshow-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    } */
+    #slideshow-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 20px;
+  
+  color: white;
+}
+
+    .control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: #000;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    
+
+    .control:hover {
+      background-color: #000;
+      color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    #take-a-look {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color:brown;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#take-a-look:hover {
+  background-color: #3e8e41;
+}
+
+#signup-login-buttons {
+  display: none;
+  position: absolute;
+  align-items: center;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  /* background-color: #fff; */
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  z-index: 1;
+  text-align: center;
+}
+
+
+#signup-login-buttons button {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#signup-login-buttons button:hover {
+  background-color: #3e8e41;
+}
+
+#take-a-look:hover + #signup-login-buttons {
+  display: block;
+}
+.adminer{
+  position: absolute;
+  top: -12%;
+  left: 57.5%;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="newLogin.php"><span class="icon">👤</span>Login</a></li>
+      <li><a href="signup.php"><span class="icon">📝</span>Signup</a></li>
+      <li class="admin"><button id="take-a-look"><span class="icon">🔑</span>Admin</button>
+        <div id="signup-login-buttons">
+          
+          <button id="login-button" class="adminer" onclick="window.location.href='adminLogin.php';">Log In</button>
+        </div></li>
+    </ul>
+  </nav>
+
+  <div id="slideshow"container">
+    <div id="slideshow">
+      <img src="./image/axum.jpg" alt='welcom' class="active" />
+      <img src="./image/axum-2.jpg" alt='welcom' />
+      <img src="./image/lalibela.jpg" alt='welcom' />
+      <img src="./image/debre-danos.jpg"  alt='welcom'/>
+      <img src="./image/fassil.jpg" alt='welcom'>
+      <img src="./image/gonder-5300.jpg" alt='welcom'>
+      <img src="./image/Harar-Jugol.jpg" alt='welcom'>
+      <img src="./image/sof-omar-3.jpg" alt='sof omar'>
+      <img src="./image/welcome-5.jpg" alt='welcom'>
+      
+    </div>
+    
+    <div id="slideshow-controls">
+      <div class="control" id="prev">&lt;</div>
+      <h2 class="banner">Welcome to KaMM</h2>
+      <button id="take-a-look" onclick="window.location.href='homepage.php'">Take a Look</button>
+
+           <div class="control" id="next">&gt;</div>
+    </div>
+  </div>
+
+  <script>
+    const slideshow = document.getElementById('slideshow');
+    const slides = slideshow.getElementsByTagName('img');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let currentSlide = 0;
+    var button = document.getElementById("take-a-look");
+var buttons = document.getElementById("signup-login-buttons");
+
+button.addEventListener("click", function() {
+  if (buttons.style.display === "none") {
+    buttons.style.display = "block";
+  } else {
+    buttons.style.display = "none";
+  }
+});
+
+    function showSlide(n) {
+      if (n < 0) {
+        currentSlide = slides.length - 1;
+      } else if (n >= slides.length) {
+        currentSlide = 0;
+      } else {
+        currentSlide = n;
+      }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+      }
+      slides[currentSlide].classList.add('active');
+    }
+
+    prev.addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+    });
+
+    next.addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+    });
+
+    setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+  </script>
+</body>
+</html>
