@@ -156,7 +156,7 @@ nav a{
 </div>
     </section>
  <footer>
-		<p>&copy; 2023 KaMM</p>
+		<p>&copy; 2023 TRS</p>
 	</footer>
 </body>
 </html>

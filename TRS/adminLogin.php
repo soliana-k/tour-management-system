@@ -314,7 +314,7 @@ form h2 {
 <body>
   <header>
     <div class="logo">
-      <a href="#">KaMM Admin Panel</a>
+      <a href="#">TRS Admin Panel</a>
     </div>
     <nav>
       <ul>

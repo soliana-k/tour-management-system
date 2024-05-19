@@ -118,7 +118,7 @@ $bookings = $bookings_stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 	<header>
 		<div class="logo">
-			<a href="AdminHome.php">KaMM</a>
+			<a href="AdminHome.php">TRS</a>
 		</div>
 		<nav>
 			<ul>
@@ -164,7 +164,7 @@ $bookings = $bookings_stmt->fetchAll(PDO::FETCH_ASSOC);
 		</section>
 	</main>
     <footer>
-		<p>&copy; 2023 KaMM</p>
+		<p>&copy; 2024 TRS</p>
 	</footer>
 </body>
 </html>

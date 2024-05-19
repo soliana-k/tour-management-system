@@ -6,11 +6,12 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
     
     header('Location: adminLogin.php');
     exit;
-}?>
+}  
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>KaMM</title>
+	<title>Admin</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -104,51 +105,68 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 <body>
 	<header>
 		<div class="logo">
-			<a href="adminHome.php">KaMM</a>
+			<a href="#">TRS</a>
 		</div>
 		<nav>
 			<ul>
 				<li><a href="AdminHome.php">Home</a></li>
-				
+				<li><a href="addtour.php">Add Tour</a></li>
+
 				
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<h1>Total Administrators</h1>
+		<h1>Total Tours</h1>
 		
 		<section class="table-container">
-			<h2>Admin List</h2>
+			<h2>Available Tour List</h2>
 			<table>
 				<thead>
 					<tr>
-						<th>Customer ID</th>
-						<th>Name</th>
-						<th>Email</th>
-                                                
+						<th>SN</th>
+						<th>Tour Name</th>
+						<th>Destination</th>
+						<th>Available in</th>
+                                                <th>Price</th>
+                                                <th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
 						// Create a PDO instance and connect to the database
 						$db = new PDO('mysql:host=localhost;dbname=list', 'root', '');
-						
+						$sty="available";
 						// Prepare the SQL query to fetch data from the "customer" table
-						$sql = "SELECT * FROM admin";
+						$sql = "SELECT * FROM tour";
 						$stmt = $db->prepare($sql);
 						
 						// Execute the query
 						$stmt->execute();
+                                                $rowCount=$stmt->rowCount();
+                             
 						$i=1;
 						// Fetch and display the results
 						while ($row = $stmt->fetch()) {
 							echo "<tr>";
 							echo "<td>" .$i++."</td>";
-							echo "<td>" . $row['fname'] ." ". $row['lname']. "</td>";
-							echo "<td>" . $row['email'] . "</td>";
-
+							echo "<td>" . $row['name'] ."</td>";
+							echo "<td>" . $row['location'] . "</td>";
+							echo "<td>" . $row['start'] ." - ". $row['end']. "</td>";
+                                                        echo "<td>" . "$".$row['price']  . "</td>";
+                                                        echo "<td> <a href='deltour.php?name=" . $row["name"] . "'>Delete</a></td>";
 							echo "</tr>";
 						}
+                                                if($rowCount==0){
+                                                    echo "<tr>";
+							echo "<td>No Data</td>";
+							echo "<td>No Data</td>";
+							echo "<td>No Data</td>";
+							echo "<td>No Data</td>";
+                                                        echo "<td>No Data</td>";
+                                                        echo "<td>No Data</td>";
+							echo "</tr>";
+                                                }
 					?>
 				</tbody>
 			</table>

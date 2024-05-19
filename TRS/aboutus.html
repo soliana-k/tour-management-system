@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tour Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+     <style>
+        /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.hero {
+    background-image: url("./image/mounta.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.overlay {
+    background-image: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay .content {
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #ffdd40;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 0;
+}
+
+.about-section {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.team-section {
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.values-section {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.value {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.value:hover {
+    transform: translateY(-10px);
+}
+
+.info-section {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    filter: invert(100%);
+}
+
+.social-icons img:hover {
+    filter: invert(50%);
+}
+
+     </style>
+</head>
+<body>
+   <div class="test-image"></div>
+    <header class="hero">
+        <div class="overlay">
+            <div class="content">
+                <h1>Tour Reservation System</h1>
+                <p>Your Ultimate Travel Partner</p>
+                <nav>
+                    <ul>
+                        <li><a href="homepage.php">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Meet the Team</a></li>
+                        <li><a href="#values">Our Values</a></li>
+                        <li><a href="#info">Additional Info</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to Tour Reservation System. We are dedicated to providing exceptional travel experiences with our curated tours around Ethiopia.</p>
+            <p>At TRS Tour, our goal is to make it easy and convenient for you to plan and book your next adventure. We understand that traveling is an exciting and memorable experience, and we want to help you make the most of it.</p>
+			<p>Our system is designed to provide you with a hassle-free way to research, compare, and book tours and activities from top-rated providers around the world. With just a few clicks, you can find the perfect tour, read reviews from other travelers, and reserve your spot – all from the comfort of your home.</p>
+			<p>Our team is passionate about travel and dedicated to providing you with the best possible service. We work closely with our partners to ensure that every tour and activity listed on our platform meets our high standards for quality, safety, and value. We also regularly update our database with new tours and destinations, so you can always find something new and exciting to explore.</p>
+			<p>Whether you're looking for a guided city tour, a thrilling outdoor adventure, or a relaxing beach getaway, we've got you covered. Our user-friendly platform is designed to help you find and book the perfect tour for your budget and preferences. And if you have any questions or concerns, our customer support team is always here to help.</p>
+			<p>Thank you for choosing TRS Tour. We look forward to helping you plan your next adventure!</p>
+        </div>
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    
+                    <h3>Kalkidan K</h3>
+                    <p>Co-Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                   
+                    <h3>Bitanya</h3>
+                    <p>Co-founder</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="values" class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value">
+                    <h3>Customer Satisfaction</h3>
+                    <p>We prioritize customer happiness and strive to exceed expectations.</p>
+                </div>
+                <div class="value">
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with honesty and transparency.</p>
+                </div>
+                <div class="value">
+                    <h3>Excellence</h3>
+                    <p>We are committed to delivering excellence in every aspect of our services.</p>
+                </div>
+                <div class="value">
+                    <h3>Innovation</h3>
+                    <p>We embrace innovation to continuously improve our offerings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="info-section">
+        <div class="container">
+            <h2>Additional Information</h2>
+            <p>Explore our website to discover amazing travel destinations and book your dream vacation today!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tour Reservation System. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -113,6 +113,7 @@
       font-size: 3.5rem;
       color: antiquewhite;
       z-index: 1;
+      text-align: center;
     }
 
     /* #slideshow-controls {
@@ -160,7 +161,7 @@
   display: block;
   margin-bottom: 10px;
   padding: 10px 20px;
-  background-color:brown;
+  background-color:blue;
   color: white;
   border-radius: 5px;
   border: none;
@@ -220,11 +221,8 @@
     <ul>
       <li><a href="newLogin.php"><span class="icon">👤</span>Login</a></li>
       <li><a href="signup.php"><span class="icon">📝</span>Signup</a></li>
-      <li class="admin"><button id="take-a-look"><span class="icon">🔑</span>Admin</button>
-        <div id="signup-login-buttons">
-          
-          <button id="login-button" class="adminer" onclick="window.location.href='adminLogin.php';">Log In</button>
-        </div></li>
+      <li class="admin"><button id="take-a-look" onclick="window.location.href='adminLogin.php';"><span>  </span>Admin</button>
+        </li>
     </ul>
   </nav>
 
@@ -244,7 +242,7 @@
     
     <div id="slideshow-controls">
       <div class="control" id="prev">&lt;</div>
-      <h2 class="banner">Welcome to KaMM</h2>
+      <h3 class="banner">Welcome to TRS</h3>
       <button id="take-a-look" onclick="window.location.href='homepage.php'">Take a Look</button>
 
            <div class="control" id="next">&gt;</div>

@@ -136,7 +136,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
       }
       
       article button {
-        background-color:  crimson;
+        background-color:  green;
         color: white;
         font-size: 18px;
         padding: 10px;
@@ -172,7 +172,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
         color:white;
       }
        #search-form button {
-           background-color: crimson;
+           background-color: green;
            color:white;
            border:none;
            padding: 10px;
@@ -235,7 +235,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
       }
   
       #payment-form button {
-        background-color:  crimson;
+        background-color:  green;
         color: #fff;
         font-size: 18px;
         padding: 10px;
@@ -246,8 +246,8 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
       /* Styles for close button */
 #close-btn {
   position: absolute;
-  top: 0.8%;
-  right: 30%;
+  top: 10px;
+  right: 10px;
   font-size: 24px;
   color: black;
   border: none;
@@ -258,6 +258,9 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
 #close-btn:hover {
   color: red;
 }
+
+
+
 .card-type {
     display: flex;
     align-items: center;
@@ -279,7 +282,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
   footer{
       display:flex;
       justify-content: center;
-      background-color: crimson;
+      background-color: green;
       color: white;
       padding: 20px;
   }
@@ -319,7 +322,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
     <main>
       <header>
           <div class="logo">
-			<a href="#">KaMM</a>
+			<a href="#">TRS</a>
 		</div>
 
     <nav>
@@ -344,7 +347,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
   <h2>Currently Available Tours</h2>
 </div>
 <div class="moto">
-  <h1>Explore Ethiopia with <span class="bolder">KaMM</span></h1>
+  <h1>Explore Ethiopia with <span class="bolder">TRS</span></h1>
 </div>
 </main>
 <section>
@@ -364,11 +367,13 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
     $stmt->execute(["%$search%", "%$search%"]);
   }
   $tours = $stmt->fetchAll();
+  
 
   // Display each tour as an article
   foreach ($tours as $tour) {
+       //var_dump($tour['image']);
     echo '<article>';
-    echo '<img src="' . $tour['image'] . '" width="300px">';
+   echo '<img src="' . $tour['image'] . '" width="400px">';
     echo '<h2>' . $tour['name'] . '</h2>';
     echo '<p>' . $tour['description'].'</p>';
     echo '<p> Location: '. $tour['location'] . '</p>';
@@ -401,7 +406,7 @@ if (!isset($_SESSION['welcome_message_displayed'])) {
                <span class="card-type-icon"></span>
       <span class="card-type-name"></span>
           </div>
-          <br>
+      
           <label for="expiration-date">Expiration Date:</label>
           <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
 
@@ -478,7 +483,7 @@ closeBtn.addEventListener('click', () => {
 // Add event listener to submit the payment form when the user clicks "Book Now" button
 
 </script>
-    <footer>KaMM @2023, Adama,Ethiopia</footer>
+    <footer>TRS @2024, Adama,Ethiopia</footer>
   </body>
 </html>
 

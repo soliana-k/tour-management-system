@@ -127,12 +127,12 @@ footer {
       <nav>
           <header>
               <div class="logo">
-			<a href="#">KaMM</a>
+			<a href="#">TRS</a>
 		</div>
           </header>
         <ul id="admin-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="AdminHome.php">Home</a></li>
+          <li><a href="logout.php">Logout</a></li>
           
         </ul>
       </nav>
@@ -152,17 +152,12 @@ footer {
             <label for="location">Tour Location:</label>
             <input type="text" id="location" name="location" required>
             <label for="image">Tour Image URL:</label>
-            <input type="url" id="image" name="image" required>
+            <input type="text" id="image" name="image" required>
             <label for="price">Tour Price:</label>
             <input type="number" id="price" name="price" required>
             <br>
             
-            <label for="status">Tour Status:</label>
-            <select id="status" name="stat" required>
-              <option value="">Select Status</option>
-              <option value="available">Available</option>
-              <option value="unavailable">Unavailable</option>
-            </select>
+            
             <button type="submit">Add Tour</button>
           </form>
         </div>
@@ -171,7 +166,7 @@ footer {
       </main>
       
       <footer>
-		<p>&copy; 2023 KaMM</p>
+		<p>&copy; 2023 TRS</p>
 	</footer>
     </body>
 </html>
@@ -189,7 +184,7 @@ footer {
     $time = filter_input(INPUT_POST,"end");
     $date = filter_input(INPUT_POST,"date");
     $image=filter_input(INPUT_POST, "image");
-    $stat=filter_input(INPUT_POST, "stat");
+    
 
     // Connect to database
     $dsn = "mysql:hostname=localhost;dbname=list";
@@ -200,7 +195,7 @@ if(!empty($name)){
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       // Prepare SQL statement to insert tour into database
-      $sql = "INSERT INTO tour (name, start, end, description, location, price, image, status) VALUES (:name, :date, :time, :desc, :location, :price, :image, :stat)";
+      $sql = "INSERT INTO tour (name, start, end, description, location, price, image) VALUES (:name, :date, :time, :desc, :location, :price, :image)";
       $stmt = $pdo->prepare($sql);
 
       // Bind parameters to prepared statement
@@ -211,7 +206,7 @@ if(!empty($name)){
       $stmt->bindParam(':location', $location);
       $stmt->bindParam(':price', $price);
       $stmt->bindParam(':image', $image);
-      $stmt->bindParam(':stat', $stat);
+      
       
       
      

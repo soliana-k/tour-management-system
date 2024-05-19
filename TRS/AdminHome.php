@@ -43,6 +43,20 @@ header {
 	font-size: 24px;
 	text-decoration: none;
 }
+button {
+	  background-color: rgb(40, 126, 206);
+	  border: none;
+	  color: white;
+	  
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  
+	  border-radius: 5px;
+	  cursor: pointer;
+      transition: background-color 0.2s ease;
+	}
 
 nav ul {
 	display: flex;
@@ -167,7 +181,7 @@ footer {
 <body>
 	<header>
 		<div class="logo">
-			<a href="#">KaMM</a>
+			<a href="#">TRS</a>
 		</div>
 		<nav>
 			<ul>
@@ -176,7 +190,10 @@ footer {
 				<li><a href="bookdash.php">Bookings</a></li>
 				
 				
-				<li><a href="adminProfile.php">Profile</a></li>
+				<li><form method="post" action="logout.php">
+  <button type="submit" name="logout">Logout</button>
+  
+  </form></li>
 			</ul>
 		</nav>
 	</header>
@@ -244,7 +261,7 @@ echo "<p>$add</p>";
 		
 	</main>
 	<footer>
-		<p>&copy; 2023 KaMM</p>
+		<p>&copy; 2023 TRS</p>
 	</footer>
 	
 </body>

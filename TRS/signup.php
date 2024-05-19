@@ -45,7 +45,7 @@ $fname = filter_input(INPUT_POST,"first-name");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>KaMM - Signup</title>
+	<title>TRS - Signup</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
     <style>
          /* Header styles */
@@ -170,7 +170,7 @@ form p.success {
 <body>
     <header>
         <div class="logo">
-          <a href="#">KaMM</a>
+          <a href="#">TRS</a>
         </div>
         <nav>
           <ul>

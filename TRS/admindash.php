@@ -10,7 +10,7 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>KaMM</title>
+	<title>TRS</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -104,7 +104,7 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 <body>
 	<header>
 		<div class="logo">
-			<a href="AdminHome.php">KaMM</a>
+			<a href="adminHome.php">TRS</a>
 		</div>
 		<nav>
 			<ul>
@@ -115,19 +115,17 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 		</nav>
 	</header>
 	<main>
-		<h1>Total Users</h1>
+		<h1>Total Administrators</h1>
 		
 		<section class="table-container">
-			<h2>Customer List</h2>
+			<h2>Admin List</h2>
 			<table>
 				<thead>
 					<tr>
 						<th>Customer ID</th>
 						<th>Name</th>
 						<th>Email</th>
-						<th>Address</th>
-                                                <th>Telephone</th>
-                                                <th>Action</th>
+                                                
 					</tr>
 				</thead>
 				<tbody>
@@ -136,7 +134,7 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 						$db = new PDO('mysql:host=localhost;dbname=list', 'root', '');
 						
 						// Prepare the SQL query to fetch data from the "customer" table
-						$sql = "SELECT * FROM user";
+						$sql = "SELECT * FROM admin";
 						$stmt = $db->prepare($sql);
 						
 						// Execute the query
@@ -148,9 +146,7 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 							echo "<td>" .$i++."</td>";
 							echo "<td>" . $row['fname'] ." ". $row['lname']. "</td>";
 							echo "<td>" . $row['email'] . "</td>";
-							echo "<td>" . $row['country'] .", " . $row['city']. "</td>";
-                                                        echo "<td>" . $row['tel']. "</td>";
-                                                        echo "<td><a href='deluser.php?email=" . $row["email"] . "'>Delete</a>" ."</td>";
+
 							echo "</tr>";
 						}
 					?>
@@ -159,7 +155,7 @@ if(!isset($_SESSION["isAdmin"]) || $_SESSION["isAdmin"] !== true){
 		</section>
 	</main>
     <footer>
-		<p>&copy; 2023 KaMM</p>
+		<p>&copy; 2023 TRS</p>
 	</footer>
 </body>
 </html>
